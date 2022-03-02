@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <time.h>
+#include <ctype.h>
+#include <time.h>
+#include <windows.h>
+#include <process.h>
+int start_number;
+void delay(unsigned int mseconds)
+{
+    clock_t goal = mseconds + clock();
+    while (goal > clock());
+}
+struct coordinate
+{
+    int x;
+    int y;
+    int direction;
+};
+typedef struct coordinate coordinate;
+coordinate head, bend[500] , food , body[30];
+
+
+int main()
+{
+    head.x=20;
+    head.y=25;
+    printf("\n|----------------------------------------------------------------------------------------------------|\n");
+    printf("\n|                                                                                                    |\n");
+    printf("\n|               WELCOME   TO THE GAME OF SNAKES                                                      |\n");
+    printf("\n|                                                                                                    |\n");
+    printf("\n|                                                                                                    |\n");
+    printf("\n|                                                                                                    |\n");
+    printf("\n|----------------------------------------------------------------------------------------------------|\n");
+    delay(50);
+    system("cls");
+    menu();
+    delay(50);
+    system("cls");
+    snake();
+}
+   void menu()
+   {
+    do
+    {
+      printf("\n\nMenu");
+      printf("\n1.Start the Game");
+      printf("\n2.High Score");
+      printf("\n3.Rules and Instructions");
+      printf("\n4.Exit");
+      scanf("%d",&start_number);
+      if(start_number==3)
+      {
+          printf("\n\n\nRules and Instructions");
+                  printf("\n1. Use arrow keys to make the snake.");
+                  printf("\n2. You will be provided food at some locations that you have to eat.");
+                  printf("\n3. Every when your snake eat the food it grows by +1 in its length and thus your score.");
+                  printf("\n4. Your game will be over when the snake will collides with its body itself.");
+                  printf("\n5. In order to pause the game in between .... press 'Space Bar'");
+                  printf("\n\n");
+      }
+      if(start_number!=1&&start_number!=2&&start_number!=3&&start_number!=4)
+      {
+          printf("INVALID INPUT");
+      }
+    }while(start_number!=4);
+   }
+void snake()
+{
+    SetCursorPos(head.x,head.y);
+    FOREGROUND_GREEN;
+ printf("%c",2);
+}
+
+

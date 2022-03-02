@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+   long long int T,N,i,x,y,j,ress[500000],res[500000],k,z;
+    scanf("%lld",&T);
+    for(j=1;j<=T;j++)
+    {
+        scanf("%lld",&N);
+    for(i=0;;i++)
+    {
+        if(N>pow(2,i))
+       {}
+       else{
+         x=i-1;
+         printf("%lld\n",x);
+         break;
+       }
+    }
+    for(i=0;;i++)
+    {
+        if((N>=(pow(2,x)+pow(2,i)))&&x!=i)//if((N<=(pow(2,x)+pow(2,i)))&&x!=i)  ;; {y=i; break;}
+           {}
+           else{
+                z=i;
+             y=i-1;
+             printf("%lld\n",y);
+             break;
+           }
+    }
+    res[j]=(N-(pow(2,x)+pow(2,y)));ress[j]=(N-(pow(2,x)+pow(2,z)));
+   }
+   for(j=1;j<=T;j++)
+   {
+       if(abs(res[j])>abs(ress[j]))
+       printf("%lld\n",abs(ress[j]));
+       else
+       printf("%lld\n",abs(res[j]));
+   }
+}
